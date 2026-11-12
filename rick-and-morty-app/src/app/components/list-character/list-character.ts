@@ -11,15 +11,23 @@ import { CharacterService } from '../../services/character';
 export class ListCharacter {
   service = inject(CharacterService);
   characters = signal<Character[]>([]);
+  errorMsj = signal(false);
 
   constructor() {
     this.startCharacter();
   }
 
   startCharacter() {
-    this.service.getCharacters()
-      .subscribe((response) => {
+    this.service.getCharacters().subscribe({
+      
+      next: (response) => {
         this.characters.set(response.results);
-      })
+      },
+
+      error: () => {
+        this.errorMsj.set(true);
+      },
+    });
+
   }
 }

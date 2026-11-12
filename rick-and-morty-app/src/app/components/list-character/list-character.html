@@ -1,7 +1,12 @@
+
+@if (errorMsj()) {
+  <p>Ups, algo salió mal al cargar los personajes.</p>
+} @else {
 <section>
     @for (item of characters(); track item.id) {
-     <app-card-character [character]="item">
+    <app-card-character [oneCharacter]="item">
 
-     </app-card-character>
+    </app-card-character>
     }
 </section>
+}

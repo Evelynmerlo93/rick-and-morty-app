@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CharacterService {
-  http = inject(HttpClient);
-  apiUrl =  'https://rickandmortyapi.com/api/character';
+  private http = inject(HttpClient);
+ private apiUrl =  'https://rickandmortyapi.com/api/character';
 
   getCharacters(): Observable<CharacterResponse> {
   return this.http.get<CharacterResponse>(this.apiUrl);
