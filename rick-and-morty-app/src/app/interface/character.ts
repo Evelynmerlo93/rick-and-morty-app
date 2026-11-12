@@ -12,3 +12,6 @@ export interface Character {
     url: string,
     created: string,
 }
+export interface CharacterResponse {
+    results: Character[],
+}

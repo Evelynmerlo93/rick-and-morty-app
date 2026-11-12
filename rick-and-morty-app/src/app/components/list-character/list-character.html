@@ -1,1 +1,7 @@
-<p>list-character works!</p>
+<section>
+    @for (item of characters(); track item.id) {
+     <app-card-character [character]="item">
+
+     </app-card-character>
+    }
+</section>

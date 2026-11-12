@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+ import { Character } from '../../interface/character';
 
 @Component({
   selector: 'app-card-character',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './card-character.html',
   styleUrl: './card-character.css',
 })
-export class CardCharacter {}
+export class CardCharacter {
+  oneCharacter = input.required<Character>()
+}
